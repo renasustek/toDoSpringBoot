@@ -1,11 +1,21 @@
 package com.github.renas.toDoSpringBoot;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.UUID;
 
+@Entity
+@Table(name="note", schema="public")
 public class Note {
+    @Id
     private UUID id;
+    @Column(name="title", nullable=false, unique=false)
     private String title;
+    @Column(name="content", nullable=false, unique=false)
     private String content;
 
     public Note(UUID id, String title, String content) {
@@ -14,6 +24,9 @@ public class Note {
         this.content = content;
     }
 
+    public Note(){
+
+    }
     public UUID getId() {
         return id;
     }

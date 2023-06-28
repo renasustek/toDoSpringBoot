@@ -16,10 +16,10 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework:spring-web:6.0.10")
-	implementation("org.postgresql:postgresql:42.3.1")
+	runtimeOnly("org.postgresql:postgresql")
 
-	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
